@@ -311,31 +311,31 @@ echo "${var.github_access_token_1}" | docker login ghcr.io -u ${var.github_acces
 END_OF_FILE
 }
 
-# 최신 Amazon Linux 2023 AMI 조회 (프리 티어 호환)
-data "aws_ami" "latest_amazon_linux" {
-  most_recent = true
-  owners      = ["amazon"]
-
-  filter {
-    name   = "name"
-    values = ["al2023-ami-2023.*-x86_64"]
-  }
-
-  filter {
-    name   = "architecture"
-    values = ["x86_64"]
-  }
-
-  filter {
-    name   = "virtualization-type"
-    values = ["hvm"]
-  }
-
-  filter {
-    name   = "root-device-type"
-    values = ["ebs"]
-  }
-}
+# # 최신 Amazon Linux 2023 AMI 조회 (프리 티어 호환)
+# data "aws_ami" "latest_amazon_linux" {
+#   most_recent = true
+#   owners      = ["amazon"]
+#
+#   filter {
+#     name   = "name"
+#     values = ["al2023-ami-2023.*-x86_64"]
+#   }
+#
+#   filter {
+#     name   = "architecture"
+#     values = ["x86_64"]
+#   }
+#
+#   filter {
+#     name   = "virtualization-type"
+#     values = ["hvm"]
+#   }
+#
+#   filter {
+#     name   = "root-device-type"
+#     values = ["ebs"]
+#   }
+# }
 
 # ami 최신 버전 가져옮
 data "aws_ssm_parameter" "amazon_linux_ami" {
