@@ -79,8 +79,11 @@ custom:
   appName: testApp
   prod:
     domain: test100.shop
-    backUrl: "https://api.${custom.appName}.${custom.prod.domain}"
-    frontUrl: "https://www.${custom.appName}.${custom.prod.domain}"
+#    예전 URL 설계
+#    backUrl: "https://api.${custom.appName}.${custom.prod.domain}"
+#    frontUrl: "https://www.${custom.appName}.${custom.prod.domain}"
+    backUrl: "https://api.${custom.prod.domain}"
+    frontUrl: "https://www.${custom.prod.domain}"
 
   dev:
     domain: localhost
